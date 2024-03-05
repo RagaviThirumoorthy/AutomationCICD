@@ -78,5 +78,7 @@ public class StandAloneTestEtE {
 		System.out.println(driver.findElement(By.cssSelector("h1.hero-primary")).getText());
 		
 	}
+	
+	//Adding comments to test CICD end to end
 
 }
