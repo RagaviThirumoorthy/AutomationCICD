@@ -19,7 +19,7 @@ public class ErrorValidations extends BaseTest {
 		
 		loginPage.loginApplication("ragavi@gmail.com","KaviKrrish*");
 		String errorMsg = loginPage.getErrorMsg();
-		Assert.assertEquals("Incorrect email", errorMsg);
+		Assert.assertEquals("Incorrect email or password.", errorMsg);
 	}
 	
 	@Test(retryAnalyzer = selenium.TestComponents.Retry.class,groups= {"Error"})
@@ -28,7 +28,7 @@ public class ErrorValidations extends BaseTest {
 		ProductsCatalogue catalogue = loginPage.loginApplication("ragavi@gmail.com","KaviKrrish*29");
 		CartPage cartPage = catalogue.addToCart(productName);
 		cartPage.goToCartPage();
-		Boolean match = cartPage.verifyProductDisplay("IPHONE 14 PRO");
+		Boolean match = cartPage.verifyProductDisplay("IPHONE 13 PRO");
 		Assert.assertTrue(match);
 	}
 
